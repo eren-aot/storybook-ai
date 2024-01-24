@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-    apiKey: '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', // Replace with your OpenAI API key
+    apiKey: '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', // Replace with your OpenAI API key
 });
 
 export async function POST(req: Request) {
@@ -24,13 +24,13 @@ export async function POST(req: Request) {
         return NextResponse.json(completion, { status: 200 });
 
     } catch (error) {
-
-        console.log("STORY GENERATOR ISSUE")
+        console.error("STORY GENERATOR ISSUE",error)
         return new NextResponse("internal Server Error", { status: 500 })
     }
 }
 
-export async function GET() {
+export async function GET(req: Request) {
 
+    // console.log(req.body)
     return NextResponse.json({ message: "Story Book Generator" }, { status: 200 });
 } 

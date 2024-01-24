@@ -18,6 +18,10 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
+import axios from 'axios';
+import toast from "react-hot-toast";
+
+
 
 const formSchema = z.object({
   story: z.string().min(10, {
@@ -39,9 +43,19 @@ const CreateStoryPage = () => {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
 
-    console.log(values)
+    try {
+
+      const response = await axios.post("/api/create-story", values)
+      // const response = await axios.get("/api/create-story")
+      toast.success("Successfully story created")
+      console.log(response)
+
+    } catch (error) {
+      toast.error("Something went wrong")
+      console.log(error)
+    }
   }
 
   return (
