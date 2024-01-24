@@ -33,6 +33,71 @@
     --ring: 222.2 84% 4.9%;
  
     --radius: 0.5rem;
+
+     /* Primary Color Palette */
+  --primary-50: #fefcf6;
+  --primary-100: #fcf7e9;
+  --primary-200: #f9f0d2;
+  --primary-300: #f4e3af;
+  --primary-400: #e8c85e;
+  --primary-500: #cda41d;
+  --primary-600: #937615;
+  --primary-700: #6b560f;
+  --primary-800: #3e3209;
+  --primary-900: #1f1904;
+  --primary-950: #120e03;
+
+  /* Secondary Color Palette */
+  --secondary-50: #fdf8f7;
+  --secondary-100: #fbedea;
+  --secondary-200: #f6dad5;
+  --secondary-300: #efbdb3;
+  --secondary-400: #e07b67;
+  --secondary-500: #c34228;
+  --secondary-600: #8c2f1d;
+  --secondary-700: #662215;
+  --secondary-800: #3b140c;
+  --secondary-900: #1e0a06;
+  --secondary-950: #110603;
+
+  /* Tertiary Color Palette */
+  --tertiary-50: #fdf7f8;
+  --tertiary-100: #fbeaed;
+  --tertiary-200: #f6d5da;
+  --tertiary-300: #efb3bd;
+  --tertiary-400: #df687b;
+  --tertiary-500: #c22942;
+  --tertiary-600: #8b1d30;
+  --tertiary-700: #651523;
+  --tertiary-800: #3b0c14;
+  --tertiary-900: #1d060a;
+  --tertiary-950: #110406;
+
+  /* Quaternary Color Palette */
+  --quaternary-50: #fcf8f9;
+  --quaternary-100: #f7edf1;
+  --quaternary-200: #f0dbe3;
+  --quaternary-300: #e3bfcd;
+  --quaternary-400: #c87e9c;
+  --quaternary-500: #a4466c;
+  --quaternary-600: #76324d;
+  --quaternary-700: #562538;
+  --quaternary-800: #321521;
+  --quaternary-900: #190b10;
+  --quaternary-950: #0e0609;
+
+  /* Quinary Color Palette */
+  --quinary-50: #f9fbfb;
+  --quinary-100: #f0f4f5;
+  --quinary-200: #e1eaea;
+  --quinary-300: #c8d8da;
+  --quinary-400: #92b2b5;
+  --quinary-500: #5f888c;
+  --quinary-600: #446164;
+  --quinary-700: #324749;
+  --quinary-800: #1d292a;
+  --quinary-900: #0e1515;
+  --quinary-950: #080c0c;
   }
  
   .dark {

@@ -72,6 +72,12 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundColor: {
+        'primary-300': 'var(--primary-300)',
+        'primary-200': 'var(--primary-200)',
+        'primary-100': 'var(--primary-100)',
+        // Add other custom colors here if needed
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
