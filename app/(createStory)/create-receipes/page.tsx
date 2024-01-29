@@ -37,17 +37,17 @@ const CreateReceipes = () => {
 
     console.log(data);
 
-    // try {
+    try {
+      console.log("Hi there")
+      const response = await axios.post('/api/generate-recipes', data);
+      console.log(response);
+      form.reset();
+    } catch (error) {
 
-    //   const response = await axios.post('/api/create-story', data);
-    //   console.log(response);
-    //   form.reset();
-    // } catch (error) {
+      console.log(error);
+    } finally {
 
-    //   console.log(error);
-    // } finally {
-
-    // }
+    }
 
   }
 

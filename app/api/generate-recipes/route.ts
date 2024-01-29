@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
     } catch (error) {
         console.error("STORY GENERATOR ISSUE", error)
-        return new NextResponse("internal Server Error", { status: 500 })
+        return new NextResponse("Internal Server Error", { status: 500 })
     }
 }
 

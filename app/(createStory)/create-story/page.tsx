@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { StoryCreationSchema } from '@/schemas/schemas'
-import { z } from 'zod'
+import { set, z } from 'zod'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -12,12 +12,16 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'
+import LoadingPage from '@/components/LoadingPage'
 
 type StoryInput = z.infer<typeof StoryCreationSchema>
 
 const CreateStory = () => {
 
   const router = useRouter();
+  const [showLoader, setShowLoader] = React.useState(false);
+  const [finsishedLoading, setFinishedLoading] = React.useState(false);
+
 
   const form = useForm<StoryInput>({
     resolver: zodResolver(StoryCreationSchema),
@@ -28,23 +32,31 @@ const CreateStory = () => {
     }
   })
 
+  const isLoading = form.formState.isSubmitting;
+
   const onSubmit = async (data: StoryInput) => {
 
     // console.log(data);
 
     try {
-
+      setShowLoader(true);
       const response = await axios.post('/api/create-story', data);
       console.log(response);
       form.reset();
     } catch (error) {
 
       console.log(error);
-    } finally{
-      
+    } finally {
+      setShowLoader(false);
+      setFinishedLoading(true);
     }
 
   }
+
+  if (showLoader) {
+    return <LoadingPage finished={finsishedLoading} />
+  }
+
 
   return (
     <div className='absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
