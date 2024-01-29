@@ -1,21 +1,22 @@
+import { StoryCreationSchema } from "@/schemas/schemas";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-    apiKey: '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', // Replace with your OpenAI API key
+    apiKey: process.env.OPENAI_API_KEY, 
 });
 
 export async function POST(req: Request) {
 
     try {
         const body = await req.json();
-        const { story, sideCharacter, moral } = body;
+        const { story, sideCharacter, moralStory } = StoryCreationSchema.parse(body);
 
         const completion = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
             messages: [
                 { role: "system", content: "You are a teller of tales." },
-                { role: "user", content: `Write a story about ${story} with side charaters ${sideCharacter} and moral of story as ${moral}.` }
+                { role: "user", content: `Write a story about ${story} with side charaters ${sideCharacter} and moral of story as ${moralStory}.` }
             ],
         });
 
