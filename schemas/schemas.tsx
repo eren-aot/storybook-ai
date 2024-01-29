@@ -7,7 +7,7 @@ export const StoryCreationSchema = z.object({
 });
 
 export const ReceipesCreationSchema = z.object({
-    recipe : z.string().min(5, "Recipe is required and should be more than 5 characters"),
+    theme : z.string().min(5, "Theme is required and should be more than 5 characters"),
     ingredients : z.string(),
     restriction : z.string(),
     cookingTime : z.enum(["10min","25min","30min"]),

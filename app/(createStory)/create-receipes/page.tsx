@@ -23,7 +23,7 @@ const CreateReceipes = () => {
   const form = useForm<ReceipeInput>({
     resolver: zodResolver(ReceipesCreationSchema),
     defaultValues: {
-      recipe: "",
+      theme: "",
       ingredients: "",
       restriction: "",
       cookingTime: "10min",
@@ -55,14 +55,14 @@ const CreateReceipes = () => {
     <div className='absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
       <Card className='bg-primary-200'>
         <CardHeader>
-          <CardTitle className='text-3xl font-bold'>Generate Receipes</CardTitle>
+          <CardTitle className='text-3xl font-bold'>Generate Recipes</CardTitle>
         </CardHeader>
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
               <FormField
                 control={form.control}
-                name='recipe'
+                name='theme'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Theme</FormLabel>
@@ -161,7 +161,7 @@ const CreateReceipes = () => {
                 <Separator orientation="vertical" />
                 <Button
                   variant={
-                    form.getValues("recipe") === "10" ? "default" : "secondary"
+                    form.getValues("numberOfIngredients") === "10" ? "default" : "secondary"
                   }
                   className="w-1/2 rounded-none rounded-r-lg px-2"
                   onClick={() => {
