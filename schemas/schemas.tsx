@@ -6,11 +6,11 @@ export const StoryCreationSchema = z.object({
     moralStory: z.string(),
 });
 
-export const receipesCreationSchema = z.object({
+export const ReceipesCreationSchema = z.object({
     recipe : z.string().min(5, "Recipe is required and should be more than 5 characters"),
     ingredients : z.string(),
     restriction : z.string(),
-    cookingTime : z.enum(["10 minutes","between 20 to 30 minutes","more than 30 minutes"]),
-    numberOfIngredients : z.enum(["less than 5 ingredients","between 5 to 10 ingredients","more than 10 ingredients"]),
-    levelOfDifficulty : z.string(),
+    cookingTime : z.enum(["10min","25min","30min"]),
+    numberOfIngredients : z.enum(["5","7","10"]),
+    levelOfDifficulty : z.enum(["easy","medium","hard"]),
 })
