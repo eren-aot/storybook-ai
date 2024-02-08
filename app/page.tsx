@@ -1,7 +1,12 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+
+  const router = useRouter();
+
   return (
     <div className="relative" id="hero">
       <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
@@ -17,7 +22,7 @@ export default function Home() {
             <p className='text-primary font-semibold mt-8 md:mt-0 text-xl md:text-2xl xl:text-3xl text-center w-2/3'>
               Empowering children and adults to be their own creator. Create a hyperpersonalized story in 30 seconds now for free!
             </p>
-            <Button>Create your story</Button>
+            <Button onClick={() => router.push("/create-story")}>Create your story</Button>
           </div>
         </div>
       </div>

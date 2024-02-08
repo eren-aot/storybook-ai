@@ -1,9 +1,13 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
 import { BookOpen, PlusSquare } from 'lucide-react';
 import { Button } from './ui/button';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
+
+    const router = useRouter();
 
     return (
         <header>
@@ -31,7 +35,7 @@ const Navbar = () => {
                                 </ul>
                             </div>
 
-                            <Button>Generate Your Story</Button>
+                            <Button onClick={() => router.push("/create-story")}>Generate Your Story</Button>
                         </div>
 
                     </div>
